@@ -9,16 +9,16 @@ public class DBConnection {
   private static Connection conn;
    public static Connection getConnection() throws ClassNotFoundException,SQLException
    {
-       String url = "jdbc:mysql://localhost:3306/examination_system";
+       String url = "jdbc:mysql://localhost:3306/onlineexaminationsystem";
        String user = "root";
-       String pass = "9936360068";
+       String pass = "localhost";
        if (conn==null)
        {
            Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection(url,user,pass);
             
             System.out.println("database connected successfully");
-            
+          
             
        }
        return conn;
