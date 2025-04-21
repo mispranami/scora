@@ -4,6 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+import model.Student;
+import model.Exam;
+import model.Result;
+
 
 public class StudentPortal extends JFrame {
     private String studentId;
@@ -227,11 +231,7 @@ public class StudentPortal extends JFrame {
         JLabel yearValue = new JLabel(String.valueOf(student.getAcademicYear()));
         yearValue.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 
-        JLabel emailLabel = new JLabel("Email:");
-        emailLabel.setFont(new Font("Segoe UI", Font.BOLD, 14));
-        JLabel emailValue = new JLabel(student.getEmail());
-        emailValue.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-
+   
         detailsPanel.add(idLabel);
         detailsPanel.add(idValue);
         detailsPanel.add(nameLabel);
@@ -240,8 +240,7 @@ public class StudentPortal extends JFrame {
         detailsPanel.add(courseValue);
         detailsPanel.add(yearLabel);
         detailsPanel.add(yearValue);
-        detailsPanel.add(emailLabel);
-        detailsPanel.add(emailValue);
+
 
         panel.add(detailsPanel, BorderLayout.CENTER);
 
@@ -284,73 +283,7 @@ public class StudentPortal extends JFrame {
         new ResultPage(studentId, resultId).setVisible(true);
     }
 
-    // Model classes for demonstration
-    class Exam {
-        private String examId, subject, date, startTime, endTime, duration;
-        private int totalMarks;
-
-        public Exam(String examId, String subject, String date, String startTime, String endTime, String duration, int totalMarks) {
-            this.examId = examId;
-            this.subject = subject;
-            this.date = date;
-            this.startTime = startTime;
-            this.endTime = endTime;
-            this.duration = duration;
-            this.totalMarks = totalMarks;
-        }
-
-        // Getters
-        public String getExamId() { return examId; }
-        public String getSubject() { return subject; }
-        public String getDate() { return date; }
-        public String getStartTime() { return startTime; }
-        public String getEndTime() { return endTime; }
-        public String getDuration() { return duration; }
-        public int getTotalMarks() { return totalMarks; }
-    }
-
-    class Result {
-        private String resultId, examId, subject, examDate, grade;
-        private int score, totalMarks;
-
-        public Result(String resultId, String examId, String subject, String examDate, int score, int totalMarks, String grade) {
-            this.resultId = resultId;
-            this.examId = examId;
-            this.subject = subject;
-            this.examDate = examDate;
-            this.score = score;
-            this.totalMarks = totalMarks;
-            this.grade = grade;
-        }
-
-        // Getters
-        public String getResultId() { return resultId; }
-        public String getExamId() { return examId; }
-        public String getSubject() { return subject; }
-        public String getExamDate() { return examDate; }
-        public int getScore() { return score; }
-        public int getTotalMarks() { return totalMarks; }
-        public String getGrade() { return grade; }
-    }
-
-    class Student {
-        private String studentId, name, course, email;
-        private int academicYear;
-
-        public Student(String studentId, String name, String course, int academicYear, String email) {
-            this.studentId = studentId;
-            this.name = name;
-            this.course = course;
-            this.academicYear = academicYear;
-            this.email = email;
-        }
-
-        // Getters
-        public String getName() { return name; }
-        public String getCourse() { return course; }
-        public int getAcademicYear() { return academicYear; }
-        public String getEmail() { return email; }
-    }
+  
 
     // Button renderer and editor for JTable
     class ButtonRenderer extends JButton implements TableCellRenderer {

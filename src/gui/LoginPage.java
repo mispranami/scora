@@ -104,7 +104,7 @@ public class LoginPage extends JFrame {
         loginButton.setOpaque(true);
         loginButton.setContentAreaFilled(true);
 
-        loginButton.setForeground(Color.BLACK);
+        loginButton.setForeground(Color.WHITE);
         loginButton.setPreferredSize(new Dimension(Integer.MAX_VALUE, 45));
         loginButton.setFocusPainted(false);
         loginButton.setBorderPainted(false);
@@ -116,7 +116,7 @@ public class LoginPage extends JFrame {
         
 signupButton.setOpaque(true);
 signupButton.setContentAreaFilled(true);
-        signupButton.setForeground(Color.BLACK);
+        signupButton.setForeground(Color.WHITE);
         signupButton.setPreferredSize(new Dimension(Integer.MAX_VALUE, 45));
         signupButton.setFocusPainted(false);
         signupButton.setBorderPainted(false);
@@ -238,3 +238,4 @@ JPanel rightPanel = new JPanel() {
         SwingUtilities.invokeLater(() -> new LoginPage().setVisible(true));
     }
 }
+

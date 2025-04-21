@@ -32,13 +32,14 @@ public class Exam {
     public int getTotalMarks() { return totalMarks; }
     public String getExaminerID() { return userID; }
     public String getDuration() { return duration; }
-    public String status() { return status; }
-
+    public String getStatus() { return status; }
+    public String getUserID() { return userID; }
     // Setters
     public void setExamID(String examID) { this.examID = examID; }
     public void setSubject(String subject) { this.subject = subject; }
     public void setTotalMarks(int totalMarks) { this.totalMarks = totalMarks; }
     public void setExaminerID(String examinerID) { this.userID = userID; }
      public void getDuration(String duration) { this.duration=duration; }
-    public void status(String status) { this.status=status; }
+    public void getStatus(String status) { this.status=status; }
+    public void getExamID(String userID) { this.userID=userID; }
 }
